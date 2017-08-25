@@ -6,7 +6,8 @@
     </head>
     <body>
         
-        <h1> welcome to joel's Webpage</h1>
+    <h1>Welcome to joel's Webpage</h1>
+        
 
     </body>
 </html>
