@@ -74,10 +74,7 @@ h3
     text-align: center;
 }
 
-h4
-{
-     text-align: center;
-}
+
 
 h5
 {
@@ -127,4 +124,8 @@ img
     display: block;
 }
 
+h6
+{
+    font-size:7;
+}
 
