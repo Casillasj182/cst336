@@ -24,6 +24,7 @@ nav a:hover {
      text-decoration:none;
 }
 
+
 #choose
 {
  color:white;
@@ -90,6 +91,7 @@ img
 {
     -webkit-filter: redscale(10%); 
     filter: redscale(10%);
+    
 }
 
 .pagination {
