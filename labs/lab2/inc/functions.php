@@ -15,7 +15,7 @@ function displaySymbol($randomValue, $pos)
                     break;
             case 4: $symbol = "bar";
             }
-         echo  "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='$symbol' width='70' />";
+         echo  "<img id='reel$pos'  src='img/$symbol.png' alt='$symbol' title='$symbol' width='70' />";
         }
       
    
@@ -25,7 +25,6 @@ function displaySymbol($randomValue, $pos)
         
 function displayPoints($randomValue1,$randomValue2,$randomValue3)
         {
-            //echo "div id='output'>";
             
             if($randomValue1==$randomValue2&&$randomValue2==$randomValue3)
             {
@@ -45,7 +44,7 @@ function displayPoints($randomValue1,$randomValue2,$randomValue3)
                 }
                 echo "<h2> You Won $totalPoints points!</h2>";
             }else{
-                "<h3> Try again</h3>";
+                "<h3> Try again</h3> ";
             }
             echo "</div>";
         }
