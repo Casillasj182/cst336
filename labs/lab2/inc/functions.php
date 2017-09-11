@@ -1,8 +1,7 @@
 <?php
 
       
-function displaySymbol($randomValue, $pos)
-        {
+function displaySymbol($randomValue, $pos){
                switch($randomValue){
         
             case 0: $symbol= "seven";
@@ -46,7 +45,7 @@ function displayPoints($randomValue1,$randomValue2,$randomValue3)
             }else{
                 " <h3> Try again</h3> ";
             }
-            echo "</div>";
+            echo " </div> ";
         }
         
         
