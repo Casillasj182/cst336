@@ -44,7 +44,7 @@ function displayPoints($randomValue1,$randomValue2,$randomValue3)
                 }
                 echo "<h2> You Won $totalPoints points!</h2>";
             }else{
-                "<h3> Try again</h3> ";
+                " <h3> Try again</h3> ";
             }
             echo "</div>";
         }
@@ -53,6 +53,7 @@ function displayPoints($randomValue1,$randomValue2,$randomValue3)
   
 function play()
          {
+             
          for($i=1;$i<4;$i++)
         {
             ${"randomValue" . $i} =rand(0,4);

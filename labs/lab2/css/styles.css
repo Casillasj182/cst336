@@ -20,7 +20,8 @@
         margin:0 auto;
     }
     
-    #reel1, #reel2, #reel3 {
+    #reel1, #reel2, #reel3
+    {
         top:248px;
         position:absolute;
     }
