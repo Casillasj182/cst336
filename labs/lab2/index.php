@@ -1,5 +1,6 @@
 <?php
 include 'inc/functions.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -31,5 +32,6 @@ include 'inc/functions.php';
     
 
     </body>
+    
 </html>
 
