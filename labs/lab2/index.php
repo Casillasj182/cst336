@@ -1,6 +1,5 @@
 <?php
 include 'inc/functions.php';
-
 ?>
 
 
@@ -18,6 +17,7 @@ include 'inc/functions.php';
     <style>
         @import url("css/styles.css");
     </style>
+    
     </head>
      
        <div id="main">
