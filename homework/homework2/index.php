@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Baby Name Generator</title>
+        <title> Baby Name Generator </title>
         
         <meta charset="utf-8"/>
     </head>
