@@ -1,0 +1,87 @@
+body{
+    
+    
+background-color:#ff8000;
+    
+}
+
+#me, #welcometext
+{
+    float:left;
+}
+
+
+
+footer{
+    clear:left;
+}
+ 
+#home
+{
+    color:red;
+}
+
+table
+{
+    margin: 0px auto;
+}
+
+td strong{
+    color:black;
+}
+
+#table-header
+{
+    background-color: #044287;
+}
+
+
+
+.table-row
+{
+    background-color:#18579b;
+}
+
+ul
+{
+    text-align:left;
+    padding-left:200px;
+}
+
+.hobby
+{
+    color:Black;
+}
+
+h1
+{
+   font-family: 'Roboto Slab', serif;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+/*
+nav a:hover{  
+        
+         font-size: 1em;
+         transition: .9s;
+    }
+    
+#current{
+    border-bottom:2px orange solid;
+}
+*/
+nav a {
+        padding:15px;
+        padding-bottom:4px;
+        font-size: 1.8em;
+        color: white;
+        text-decoration: none;
+    }
+    
+    nav a:hover, #current { 
+         border-bottom:2px orange solid;
+         font-size: 2em;
+         transition: .9s;
+    }
+    

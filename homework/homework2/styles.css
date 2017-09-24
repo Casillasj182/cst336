@@ -1,0 +1,54 @@
+body
+{
+    background-color: #38ACEC
+    
+}
+
+#center
+{
+    text-align: center;
+}
+
+ input{
+        
+        top:75px;
+        left:50px;
+        position:center;
+        font-size:1.3em;
+        background-color: pink;
+        border:solid;
+        outline:none; /*hides button outline when clicking on it*/
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+    }
+    
+    
+    #main {
+        font-family: 'Baloo Bhaina', cursive;
+        background-image:url("../img/machine.png");
+        width:600px;
+        height:500px;
+        position:relative;
+        margin:0 auto;
+    }
+    
+   
+    
+    div
+    {
+        float:right;
+    }
+    
+    h1
+    {
+        color:pink;
+        text-shadow: 2px 2px 4px #000000;
+       font: italic bold 80px/80px Georgia, serif;
+
+    }
+    footer
+    {
+         background-color:pink;
+        text-align: center;
+    }

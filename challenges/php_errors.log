@@ -1,0 +1,1 @@
+[08-Sep-2017 20:32:38 UTC] PHP Fatal error:  Cannot redeclare getRandomSuite() (previously declared in /home/ubuntu/workspace/challenges/challenge1/cardgame.php:11) in /home/ubuntu/workspace/challenges/challenge1/cardgame.php on line 59
