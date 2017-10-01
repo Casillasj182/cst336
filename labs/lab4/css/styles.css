@@ -2,8 +2,10 @@
         opacity:0.9;
         width:100%;
         text-align:center;
-        color:yellow;
+        color:black;
+        
     }
+    
     
     input {
         font-size: 3em;
@@ -14,3 +16,54 @@
          margin: 0 auto;   
          width: 700px;
     }
+    
+ 
+      input{
+        
+        top:75px;
+        left:50px;
+        position:center;
+        font-size:1.3em;
+        background-color: #00ffbf;
+        border:solid;
+        outline:none; /*hides button outline when clicking on it*/
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+    
+    
+  }
+  
+  form {
+
+   width: 800px;
+   height: 700px;
+   margin: auto;
+  
+ }
+ 
+ label
+ {
+      top:75px;
+        left:50px;
+        position:center;
+        font-size:1.3em;
+        background-color: #00ffbf;
+        border:solid;
+        outline:none; /*hides button outline when clicking on it*/
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+        
+    
+ }
+option
+{
+    background-color: white;
+        border:solid;
+}
+div
+{
+     background-color: #00ffbf;
+        border:solid;
+}

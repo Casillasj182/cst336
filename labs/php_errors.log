@@ -1,8 +1,0 @@
-[08-Sep-2017 19:51:52 UTC] PHP Fatal error:  Cannot redeclare displayPoints() (previously declared in /home/ubuntu/workspace/cst336/labs/lab2/index.php:35) in /home/ubuntu/workspace/cst336/labs/lab2/inc/functions.php on line 16
-[08-Sep-2017 19:51:52 UTC] PHP Stack trace:
-[08-Sep-2017 19:51:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab2/index.php:0
-[10-Sep-2017 18:06:28 UTC] PHP Warning:  Missing argument 4 for displayPoints(), called in /home/ubuntu/workspace/cst336/labs/lab2/inc/functions.php on line 64 and defined in /home/ubuntu/workspace/cst336/labs/lab2/inc/functions.php on line 26
-[10-Sep-2017 18:06:28 UTC] PHP Stack trace:
-[10-Sep-2017 18:06:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/cst336/labs/lab2/index.php:0
-[10-Sep-2017 18:06:28 UTC] PHP   2. play() /home/ubuntu/workspace/cst336/labs/lab2/index.php:24
-[10-Sep-2017 18:06:28 UTC] PHP   3. displayPoints() /home/ubuntu/workspace/cst336/labs/lab2/inc/functions.php:64
