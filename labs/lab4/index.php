@@ -2,7 +2,8 @@
 
     $backgroundImage = "img/sea.jpg";
 
-    if(isset($_GET['keyword'])) {
+    if(isset($_GET['keyword'])) 
+    {
      
      //  echo "Keyword typed: " . $_GET['keyword'];
         
@@ -10,15 +11,19 @@
         
         $keyword = $_GET['keyword'];
         
-        if (!empty($_GET['category'])) {  //User selected a category
+        if (!empty($_GET['category'])) 
+        {  //User selected a category
              
             $keyword = $_GET['category'];
         }
         
-        if (isset($_GET['layout'])) {
+        if(isset($_GET['layout'])) 
+        {
             
             $imageURLs = getImageURLs($keyword, $_GET['layout']);
-        } else {
+        }
+        else
+        {
         
             $imageURLs = getImageURLs($keyword);
         }
@@ -27,7 +32,8 @@
         $backgroundImage = $imageURLs[array_rand($imageURLs)];
     }
     
-    function checkIfSelected($option) {
+    function checkIfSelected($option)
+    {
         
         if ($option == $_GET['category']) {
             
@@ -64,13 +70,7 @@
             
             <input type="radio" id="lvertical" name="layout" value="vertical" 
             
-             <?php
-                if ($_GET['layout']=="vertical") {
-                    echo "checked";
-                }
              
-             ?>
-            
             >
             
             <label for="lvertical"> Vertical </label>
@@ -92,11 +92,16 @@
         <br /><br />
         
         <?php
-            if(!isset($_GET['keyword'])) {  //form has not been submitted
+        
+            if(!isset($_GET['keyword']))
+            {  //form has not been submitted
                 echo "<h2>Type a keyword to display a slideshow with random images from Pixabay.com</h2>";
-            } else {   //form has been submitted
+            }
+            else
+            {   //form has been submitted
                 
-                 if (empty($_GET['keyword'])  && empty($_GET['category'])  ) {
+                 if (empty($_GET['keyword'])  && empty($_GET['category'])) 
+                 {
             
                         echo "<h2 style='color:red'> Error! You must enter a keyword or category </h2>";
                         return;

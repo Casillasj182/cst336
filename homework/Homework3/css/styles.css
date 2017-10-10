@@ -1,0 +1,93 @@
+body{
+        opacity:0.9;
+        width:100%;
+        text-align:center;
+        color:black;
+        
+    }
+    
+    
+input {
+        font-size: 3em;
+        color: black;
+    }
+    
+    
+ 
+input{
+        
+        top:75px;
+        left:50px;
+        position:center;
+        font-size:1.3em;
+        background-color:white;
+        border:inset;
+        outline:none; /*hides button outline when clicking on it*/
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+   
+  }
+  
+form {
+
+   width: 900px;
+   height: 800px;
+   margin: auto;
+  
+ }
+ 
+
+label
+ {
+    
+      top:90px;
+        left:50px;
+        position:center;
+        font-size:1.3em;
+        background-color:white;
+        border:groove;
+        outline:none; 
+        font-weight:bold;
+        color:black;
+        cursor:pointer;
+        width: 300px;
+         width: 300px;
+    
+  
+  
+ }
+ 
+ 
+option
+{
+    background-color: white;
+    border:solid;
+    
+  
+    
+}
+
+
+div
+{
+     background-color: white;
+        border:solid;
+}
+
+
+#css
+{
+    
+    font-size:70px;
+    color: black;
+    text-shadow: 2px 2px 4px white;
+    background-color: white;
+    border:solid;
+    border-bottom-width: 8px;
+  
+}
+
+
+
+
