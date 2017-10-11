@@ -4,7 +4,6 @@ use Cmfcmf\OpenWeatherMap\Exception as OWMException;
 $backgroundImage="img/weather1.jpg";
 
 
-
 require 'vendor/autoload.php';
 
 // Language of data 
@@ -15,6 +14,7 @@ $lang = 'en';
 $units = $_GET['weather'];
 
 //stores api in owm
+
 $owm = new OpenWeatherMap('522771b33652137e1675df1b6b82acb8');
 
 //uses the url with the api to get the low and max weather for the day
@@ -22,11 +22,9 @@ $url = "http://api.openweathermap.org/data/2.5/weather?q='Location'&appid=522771
 
 //stores the location into destination
 $keyword = $_GET['Location'];
+
 //stores the destination into the location
 $location=$keyword;
-
-
- 
 
 
 
@@ -181,5 +179,11 @@ else
     </font>
     <br>
     </form  align="center">
+    <!--/*BEGIN Added by Erik Ring-Walters 10/11/2017*/-->
+  
+   <img id="buddyVerified" src="img/buddy_verified.png" alt="Buddy verified"/>
+   
+       <!--/*END Added by Erik Ring-Walters 10/11/2017*/-->
+
     </body>
 </html>
