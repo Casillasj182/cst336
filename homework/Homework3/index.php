@@ -14,8 +14,8 @@ $lang = 'en';
 $units = $_GET['weather'];
 
 //stores api in owm
-
-$owm = new OpenWeatherMap('522771b33652137e1675df1b6b82acb8');
+$apikey='522771b33652137e1675df1b6b82acb8';
+$owm = new OpenWeatherMap($apikey);
 
 //uses the url with the api to get the low and max weather for the day
 $url = "http://api.openweathermap.org/data/2.5/weather?q='Location'&appid=522771b33652137e1675df1b6b82acb8";
