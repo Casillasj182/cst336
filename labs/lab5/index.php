@@ -7,7 +7,8 @@ include '../../dbConnection.php';
 
 $conn = getDatabaseConnection();
 
-function getDeviceTypes() {
+function getDeviceTypes() 
+{
     global $conn;
     $sql = "SELECT DISTINCT(deviceType)
             FROM `tc_device` 
@@ -25,7 +26,8 @@ function getDeviceTypes() {
 }
 
 
-function displayDevices(){
+function displayDevices()
+{
     global $conn;
     
     $sql = "SELECT * FROM tc_device WHERE 1 ";
