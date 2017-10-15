@@ -19,7 +19,7 @@ function getDeviceTypes() {
     
     foreach ($records as $record) {
         
-        echo "<option> "  . $record['deviceType'] . "</option>";
+        echo "<option> "  . $record['deviceType'] . "</option>" ;
         
     }
 }
