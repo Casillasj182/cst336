@@ -1,7 +1,9 @@
+<div>
 <?php
 
 
 function displayCheckoutHistory() {
+    //echo "<title> Device Checkout </title>";
     
     include '../../dbConnection.php';
     $conn = getDatabaseConnection();
@@ -17,16 +19,18 @@ function displayCheckoutHistory() {
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParam);
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
+    echo "<div>";
     foreach ($records as $record) {
         
-        echo  $record['firstName'] . " " . $record['lastName'] . "<br />";
+        echo  $record['firstName'] . " " . $record['lastName'] ." " . $record['deviceName'] . "<br />";
         
     }
+     echo "</div>";
     
 }
 
 ?>
+</div>
 
 <!DOCTYPE html>
 <html>
