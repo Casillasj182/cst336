@@ -60,12 +60,16 @@ if (isset($_GET['addUserForm'])){
 <!DOCTYPE html>
 <html>
     <head>
+        <center>
+        
         <title> Admin: Adding New User </title>
     </head>
     <body>
-
+ <link href="css/styles.css" rel="stylesheet" type="text/css" />
+          <link href="css/main.css" rel="stylesheet" type="text/css" />
+           <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <h1> Admin Section </h1>
-    <h2> Adding New Users </h2>
+   
 
     <fieldset>
         
@@ -107,6 +111,6 @@ if (isset($_GET['addUserForm'])){
         
     </fieldset>
 
-
+</center>
     </body>
 </html>

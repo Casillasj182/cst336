@@ -82,6 +82,10 @@ function getUserInfo($userId) {
 <!DOCTYPE html>
 <html>
     <head>
+        <center>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+          <link href="css/main.css" rel="stylesheet" type="text/css" />
+           <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
         <title> Admin: Updating User </title>
     </head>
     <body>
@@ -130,6 +134,6 @@ function getUserInfo($userId) {
         
     </fieldset>
 
-
+</center>
     </body>
 </html>

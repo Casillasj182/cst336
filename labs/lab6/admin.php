@@ -31,7 +31,11 @@ function displayUsers() {
 <!DOCTYPE html>
 <html>
     <head>
+         <link href="css/styles.css" rel="stylesheet" type="text/css" />
+          <link href="css/main.css" rel="stylesheet" type="text/css" />
+           <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
         <div>
+            <center>
         <title>Admin Page </title>
           <script>
             
@@ -69,11 +73,11 @@ function displayUsers() {
         $users =displayUsers();
         
       foreach($users as $user) {
-            
+             $name = $user['firstName'] . "  " . $user['lastName'];
             echo $user['userId'] . '  ' . $user['firstName'] . "  " . $user['lastName'];
            // echo "[<a href= . $user['firstName']";
            echo "[<a href='updateUser.php?userId=".$user['userId']."'> Update </a> ]";
-           
+            echo "[<a href='userinfo.php?userId=".$user['userId']."'> $name </a> ]";
            
            //this is what im trying to make wo
             //echo "[<a href='userinfo.php?variableName=$_GET['variable']".$user['userId']."'> Update </a> ]";
@@ -81,11 +85,13 @@ function displayUsers() {
            
             
             
-           //  echo "<a href='userinfo.php?". "<a href=' . $user['firstName']" . $_GET['firstName']."'></a> ]";
+           //  echo "<a href='userinfo.php?". "<a href=' . $user['firstName']" i. $_GET['firstName']."'></a> ]";
             //echo "[<a href='deleteUser.php?userId=".$user['userId']."'> Delete </a> ]";
+           // echo "<a class='name' href='usernfo.php?userId=".$user['userId']."'> $name </a> ";
           echo "<form action='deleteUser.php' style='display:inline' onsubmit='return confirmDelete(\"".$user['firstName']."\")'>
                      <input type='hidden' name='userId' value='".$user['userId']."' />
                      <input type='submit' value='Delete'>
+                     
                   </form>
                 ";
             
@@ -96,5 +102,6 @@ function displayUsers() {
         
         ?>
         </div>
+        </center>
     </body>     
 </html>
