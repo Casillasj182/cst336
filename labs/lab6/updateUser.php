@@ -33,17 +33,7 @@ function getDepartmentInfo(){
         }
         
     }
-function getUserInfo($userId) {
-    global $conn;    
-    $sql = "SELECT * 
-            FROM tc_user
-            WHERE userId = $userId";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $record = $stmt->fetch();
-    print_r($record);
-    return $record;
-}
+
 
 if (isset($_GET['userId'])) {
     
@@ -59,7 +49,7 @@ if (isset($_GET['updateUserForm'])) { //admin has submitted form to update user,
                 lastName = :lName,
                 userId = :userId,
                 email = :email,
-                phone = :phone
+                phone = :phone,
                 universityId = :universityId
 			WHERE userId = :userId";
 	$namedParameters = array();
@@ -68,9 +58,21 @@ if (isset($_GET['updateUserForm'])) { //admin has submitted form to update user,
 	$namedParameters[":userId"] = $_GET['userId'];
 	$namedParameters[":email"] = $_GET['email'];
 	$namedParameters[":phone"] = $_GET['phone'];
+    $namedParameters[":universityId"] = $_GET['universityId'];
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParameters);
     
+}
+function getUserInfo($userId) {
+    global $conn;    
+    $sql = "SELECT * 
+            FROM tc_user
+            WHERE userId = $userId";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $record = $stmt->fetch();
+    print_r($record);
+    return $record;
 }
 
 
@@ -98,16 +100,16 @@ if (isset($_GET['updateUserForm'])) { //admin has submitted form to update user,
             Email: <input type="text" name="email" required value="<?=$userInfo['email']?>"/> <br>
             University Id: <input type="text" name="universityId" required value="<?=$userInfo['universityId']?>"/> <br>
             Phone: <input type="text" name="phone" required value="<?=$userInfo['phone']?>"/> <br>
-              Gender: <input type="radio" name="gender" value="F" id="genderF"  <?=($userInfo['gender']=='F')?"checked":"" ?> required/> 
+            Gender: <input type="radio" name="gender" value="F" id="genderF"  <?=($userInfo['gender']=='F')?"checked":"" ?> required/> 
                     <label for="genderF">Female</label>
                     <input type="radio" name="gender" value="M" id="genderM"  <?=($userInfo['gender']=='M')?"checked":"" ?> required/> 
                     <label for="genderM">Male</label><br>
                     
             Role:   <select name="role">
                         <option value="" > Select One </option>
-                        <option <?=checkIfSelected('faculty')?> value="faculty">Faculty</option>
-                        <option  <?=checkIfSelected('student')?>>Student</option>
-                        <option  <?=checkIfSelected('staff')?>>Staff</option>
+                        <option <?=($userInfo['role'] == 'Faculty' ) ? "selected" :"" ?> value="faculty">Faculty</option>
+                        <option  <?=($userInfo['role'] == 'Student' ) ? "selected" :"" ?>>Student</option>
+                        <option  <?=($userInfo['role'] == 'Staff' ) ? "selected" :"" ?>>Staff</option>
                     </select>
             <br />
             Department: <select name="deptId">

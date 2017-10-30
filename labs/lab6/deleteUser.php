@@ -11,5 +11,5 @@ $stmt->execute();
 
 header("Location: admin.php");
 
-if(isset[''])
+//if(isset[''])
 ?>

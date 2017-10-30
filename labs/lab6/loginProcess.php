@@ -4,7 +4,7 @@ session_start();
 
 
 $username = $_POST["userName"];
-$error = "username/password incorrect";
+$error = "Error! Username/Password is Incorrect";
 
 if($username == $_GET['userName']){
     $_SESSION["userName"] = $username;

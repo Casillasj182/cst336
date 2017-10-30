@@ -31,6 +31,7 @@ function displayUsers() {
 <!DOCTYPE html>
 <html>
     <head>
+        <div>
         <title>Admin Page </title>
           <script>
             
@@ -94,6 +95,6 @@ function displayUsers() {
         
         
         ?>
-        
+        </div>
     </body>     
 </html>
