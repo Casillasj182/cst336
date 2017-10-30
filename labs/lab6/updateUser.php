@@ -119,10 +119,11 @@ function getUserInfo($userId) {
             Department: <select name="deptId">
                             <option value=""> Select One </option>
                             <?php
-                            
+                                $check=
                                 $departments = getDepartmentInfo();
-                                foreach ($departments as $record) {
-                                    echo "<option value='$record[departmentId]'>$record[deptName]</option>";
+                                foreach ($departments as $record)
+                                {
+                                    echo "<option value='$record[departmentId]' ".(($userInfo['deptId'] == $record['departmentId'] ) ? "selected" : "") ." >$record[deptName]</option>";
                                 }
                             
                             ?>
