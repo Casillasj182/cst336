@@ -48,6 +48,7 @@ function displayUsers() {
         </script>
     </head>
     <body>
+        <div>
 <center>
         <h1> User Info </h1>
       
@@ -99,5 +100,6 @@ function displayUsers() {
         ?>
         </div>
         </center>
+        </div>
     </body>     
 </html>
