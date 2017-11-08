@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge</title>
+    </head>
+    <body>
+        
+    <h1>Sorting Numbers</h1>
+    <h3>Enter 3 numbers from 1 to 50:</h3>
+    <form id="num">
+        Number 1: 
+        <input type="text" name="num1"><br>
+        Number 2:
+        <input type="text" name="num2"><br>
+        Number 3:
+        <input type="text" name="num3"><br>
+        
+        <input type="button" value="Sort!" onClick="sort(this.form)">
+        <h1 id="error"></h1>
+           <style>
+               #error{
+                   color: red;
+               }
+               
+           </style>
+    </form>
+     
+    <h2>The Biggest Number is:</h2>
+    <h2 id="big"></h2>
+    
+    <h1>The Numbers in ascending order are</h1>
+    <h1 id="all"></h1>
+    
+    <script>
+
+        function sort(form){
+            var numbers = [form.num1.value, form.num2.value, form.num3.value];
+            var test1 = form.num1.value;
+            //alert(test1);
+            numbers.sort();
+            //alert(numbers[2]);
+            document.getElementById("big").innerHTML = numbers[2];
+            //numbers.toString();
+            document.getElementById("all").innerHTML = numbers;
+            
+            if(numbers[0] == numbers[1] && numbers[1]==numbers[2])
+            alert("All numbers are the same!");
+            
+            for(var i=0; i<3; i++ )
+            if(numbers[i]>50 || numbers[i]<1)
+            {
+                    document.getElementById("error").innerHTML = "ERROR";
+            }
+        }
+        
+        
+    </script>
+    
+    </body>
+</html>
