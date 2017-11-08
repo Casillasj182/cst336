@@ -1,0 +1,39 @@
+body
+{
+    background-color:#51aaad;
+}
+
+#css
+{
+  float:right;
+ 
+    
+    background-color:white;
+}
+
+div
+{
+    text-align: center;
+    
+}
+h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+a{
+  color: yellow;
+}
+#movieList{
+}
+/*copied from https://www.w3schools.com/html/html_tables.asp*/
+td, th {
+    /*border: 1px solid #52aa69;*/
+    text-align: left;
+    margin-left: 50px;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #52aa69;
+}
+
