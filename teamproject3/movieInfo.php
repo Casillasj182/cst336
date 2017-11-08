@@ -24,7 +24,7 @@ function displayUsers()
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+       
           <link href="css/main.css" rel="stylesheet" type="text/css" />
            <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
         <center>
@@ -32,6 +32,7 @@ function displayUsers()
         <title>Movie Information </title>
     </head>
     <body>
+         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <div>
 <center>
         <h1> Movie Information </h1>

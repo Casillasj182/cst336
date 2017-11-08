@@ -69,6 +69,7 @@ function removeItem($i)
           
     </head>
     <body>
+         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <center>
             <h1> Shopping Cart </h1>
             
