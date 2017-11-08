@@ -72,7 +72,8 @@ function displayUsers() {
         
         $users =displayUsers();
         
-      foreach($users as $user) {
+      foreach($users as $user) 
+      {
              $name = $user['firstName'] . "  " . $user['lastName'];
             echo $user['userId'] . '  ' . $user['firstName'] . "  " . $user['lastName'];
            // echo "[<a href= . $user['firstName']";

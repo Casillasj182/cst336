@@ -15,11 +15,11 @@ $conn = getDatabaseConnection();
 
 function displayUsers() {
     global $conn;
-    $sql = "SELECT * 
-            FROM tc_user a
-            INNER JOIN tc_department b 
-            ON a.deptId = b.departmentId
-            WHERE userId=" .$_GET['userId'];
+    $sql = "SELECT * FROM `movie` JOIN director on 
+    movie.directorId = director.directorId 
+    JOIN genre 
+    ON movie.genreId = genre.genreId 
+    where movie.movieId=" . $_GET['movieId'];
     $statement = $conn->prepare($sql);
     $statement->execute();
     $users = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -79,20 +79,6 @@ function displayUsers() {
             echo " ID: " . $user['userId'] . "<br> " . ' First Name: '  .$user['firstName']   .  "<br> ". " Last Name: "  . $user['lastName'] .  "<br> " . "  Phone: "  . $user['phone']
             .  "<br> ". " Email: ". $user['email'] .  "<br> " ." Role: ". $user['role'] .  "<br> " . " Gender: " . $user['gender'] 
             .  "<br> " . " Department: " . $user['deptId'] .  "<br> " . " University ID: " . $user['universityId'];
-           // echo "[<a href= . $user['firstName']";
-          // echo "[<a href='updateUser.php?userId=".$user['userId']."'> Update </a> ]";
-            
-           
-           //this is what im trying to make wo
-            //echo "[<a href='userinfo.php?variableName=$_GET['variable']".$user['userId']."'> Update </a> ]";
-            // echo "<a href='userinfo.php?userId=".$user['userId']."'> . $user['firstName']"'.  </a> ";
-           
-            
-//$name = $user['firstName'] . "  " . $user['lastName'];
-           //  echo "<a href='userinfo.php?". "<a href=' . $user['firstName']" i. $_GET['firstName']."'></a> ]";
-            //echo "[<a href='deleteUser.php?userId=".$user['userId']."'> Delete </a> ]";
-           // echo "<a class='name' href='usernfo.php?userId=".$user['userId']."'> $name </a> ";
-          
             
         }
         

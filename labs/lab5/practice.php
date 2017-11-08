@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost'; //cloud 9
-$dbname = 'tcp';
+$dbname = 'project';
 $username  = "root";
 $password = "";
 //create database connection
@@ -12,7 +12,7 @@ $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 function usersWithanA() {
     global $dbConn;
-    $sql = "SELECT firstName, lastName, email FROM tc_user WHERE firstName LIKE 'A%'";
+    $sql = "SELECT name,movieId,release_year from movies where name LIKE '%z%'";
     
     $stmt = $dbConn->prepare($sql);
     $stmt->execute();
@@ -21,7 +21,7 @@ function usersWithanA() {
     //print_r($records);
     
     foreach ($records as $record) {
-        echo $record['firstName'] . "  "  . $record['lastName'] . " " . $record['email'] ."<br />";
+        echo $record['name'] . "  "  . $record['movieId'] . " " . $record['release_year'] ."<br />";
     }
 
 }
