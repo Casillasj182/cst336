@@ -5,7 +5,9 @@ var alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
 var words = [{ word: "snake", hint: "It's a reptile" }, 
              { word: "monkey", hint: "It's a mammal" }, 
              { word: "beetle", hint: "It's an insect" },
-             {word: "horse", hint: "It has a big nose and can be ridden"}];
+             {word: "horse", hint: "It has a big nose and can be ridden"},
+            { word: "elephant", hint: "it has tusks"},
+            { word: "squirrel", hint: "They like nuts"}];
 
 var selectedWord = "";
 var selectedHint = "";
@@ -170,10 +172,11 @@ function replaceAt(str, index, value)
 {
     return str.substr(0, index) + value + str.substr(index + value.length);
 }
-function myFunction()
+function hint()
 {
 
 alert("The Hint is:" + "  " + selectedHint);
+return false;
 //console.log(selectedHint);
 
 };

@@ -1,10 +1,12 @@
 #won,#lost
 {
     display: none;
+    color: white;
 }
 #word,#letters
 {
     padding:20px 0px;
+    color: white;
 }
 #man
 {
@@ -13,9 +15,11 @@
     width:600px;
     height: 600px;
     border:solid;
+   
+    border-color: white;
     border-radius: 5px;
     border-width: 1px;
-     text-align: center;
+    text-align: center;
 }
 #word
 {
@@ -32,7 +36,7 @@
 }
 h1
 {
-    
+    color:white;
 }
 h2
 {
@@ -45,19 +49,27 @@ endGame
 div
 {
     text-align: center;
-     background-color:#34DDC1;
+     background-color:#07575B;
 }
 h1
 {
     text-align: center;
-    background-color: #34DDC1;
+    background-color: #07575B1;
 }
 body
 {
     text-align: center;
-    background-color: #34DDC1;
+    background-color: #07575B;
 }
 font
 {
     color:white;
+}
+form
+{
+    color: black;
+}
+container text-center
+{
+    text-align: center;
 }
