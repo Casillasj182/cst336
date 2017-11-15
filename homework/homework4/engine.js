@@ -119,7 +119,8 @@ function gameloop()
 
 
 
-function initializeGame(){
+function initializeGame()
+{
 	mountains = document.getElementById('mountains');
 	mountains.style.left='0px';
 	mountains.style.top='0px';
