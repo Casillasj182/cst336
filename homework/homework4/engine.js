@@ -14,7 +14,7 @@ document.addEventListener('keydown',function(event)
 {
 	if(event.keyCode==37) leftarrowdown=true;
 	if(event.keyCode==39) rightarrowdown=true;
-	if(event.keyCode==38) jump();
+	if(event.keyCode==38 && !inAir) jump();
 	
 })
 
@@ -24,13 +24,22 @@ document.addEventListener('keyup',function(event)
 	if(event.keyCode==39) rightarrowdown=false;
 })
 
+function jump()
+{
+	inAir=false;
+	mouse.src='images/mouse_jumping.gif';  
+	mouseFallSpeed = -30;
+	var mouseY=parseInt(mouse.style.top);
+	
+	if(mouseY >= 250)
+	{
+		mouse.style.top='249px';
+	}
+}
 
 function gameloop()
 {
 	var mouseY=parseInt(mouse.style.top);
-	var treesX=parseInt(trees.style.left);
-	var mountainsX=parseInt(mountains.style.left);
-	
 	if(mouseY < 250)
 	{
 		mouseFallSpeed+=gravity;
@@ -42,17 +51,22 @@ function gameloop()
 			newMouseY=250;
 			mouse.style.top=newMouseY + 'px';
 		}
-		
-	
-	}
+		if(newMouseY==250)
+		{
+			inAir=false;
+		}
+	 }
 	
 
+	var treesX=parseInt(trees.style.left);
+	var mountainsX=parseInt(mountains.style.left);
 
-	var mouse_src = mouse.src.split('/').pop();
 	if(mouse_src=='mouse_jumping.gif')
 	{
-	
-			if(mouse.className=='flip')
+		var mouse_src = mouse.src.split('/').pop();
+		if(inAir)
+		{
+		if(mouse.className=='flip')
 			{
 				if(treesX < 0)
 				{
@@ -60,7 +74,6 @@ function gameloop()
 					mountains.style.left=mountainsX+mouse_speed/2 + 'px';	
 				}
 			}
-		
 		
 		else
 		{
@@ -73,33 +86,19 @@ function gameloop()
 			
 		}
 	}
-		
+	}
 	
-	
-	
-else
-{
-
+	else
+	{
 		if(leftarrowdown||rightarrowdown)
 		{
 			if(mouse_src!='images/mouse_running.gif')
 			{
-			//mouse.className='flip-H'
 			mouse.src='images/mouse_running.gif';
 			}
 		}
-		else
-		{	
-			mouse.src='images/mouse_standing.gif';
-		}
+		else mouse.src='images/mouse_standing.gif';
 		
-
-
-	
-}
-
-	//Making the trees move so the object looks like its moving
-
 	if(leftarrowdown&&treesX < 0)
 	{
 		mouse.className='flip';
@@ -114,21 +113,11 @@ else
 	}
 	
 
-	
-}
-
-function jump()
-{
-	//inAir=true;
-	mouse.src='images/mouse_jumping.gif';  
-	mouseFallSpeed = -30;
-	var mouseY=parseInt(mouse.style.top);
-	
-	if(mouseY >= 250)
-	{
-		mouse.style.top='249px';
 	}
 }
+
+
+
 
 function initializeGame(){
 	mountains = document.getElementById('mountains');
