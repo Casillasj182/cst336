@@ -75,7 +75,7 @@
     if(password1.value == password2.value){
       
         password2.style.backgroundColor ="#66cc66";
-        message.style.color = "#66cc66";
+        message.style.color = "yellow";
         message.innerHTML = "Passwords Match!"
     }
     else
@@ -83,13 +83,13 @@
       //if it doesnt match
         password2.style.backgroundColor = "red";
         message.style.color = "yellow";
-        message.innerHTML = "Do Not Match!"
+        message.innerHTML = "The Passwords don't match!"
     }
 }  
     
     function checkUsername() {
         // alert("Hello");
-         //var message = document.getElementById('confirmMessages');
+         var message = document.getElementById('confirmMessages');
         $.ajax({
             
             type: "GET",
@@ -101,13 +101,18 @@
                 
                 if(!data) 
                 { //data is false
-                
-                     $('#checkusername').html("Username is available");
-                     $('#checkusername').style.color = "yellow";
+                   // message.style.color="green";
+                     //$('#checkusername').css("color", "green");
+                     //$('#checkusername').style.color = "yellow";
+                    // message.style.backgroundColor = "green";
+                     $('#checkusername').css({ 'color': 'green', 'font-size': '100%' });
+                     $('#checkusername').html("Username is available")
+                     data.css("color", "green");
+                     //$('#checkusername').style.color = "yellow";
                 }
                 else
                 {
-                   
+                   $('#checkusername').css({ 'color': 'red', 'font-size': '100%' });
                     $('#checkusername').html("Username is taken");
                     //data.style.backgroundColor ="#66cc66";
                     //message.style.color = "#66cc66";
@@ -136,14 +141,15 @@
 <body id="dummybodyid">
 
    <h1> Sign Up Form </h1>
-
+<br></br>
+<br></br>
     <form>
         <fieldset>
            <legend>Sign Up</legend>
             First Name:  <input type="text"><br> 
             Last Name:   <input type="text"><br> 
             Email:       <input type="text"><br> 
-            Phone Number:<input type="text"><br><br>
+            Phone Number:<input type="text"><br>
             Zip Code:    <input type="text" id="zip" onchange="getCity()"><br>
             City: <span id="city"></span>
             <br>
@@ -160,11 +166,11 @@
                   </select><br>
                   
             Select a County: <select id="county"></select><br>    
-            Desired Username: <input type="text" id="username"><br>
-             <span id="checkusername"></span><br/>
+            Desired Username: <input type="text" id="username">
+             <span id="checkusername"></span>
             <div>
             Password: <input type="password" id="pass1" name="pass1"><br>
-            Type Password Again: <input type="password" id="pass2" name="pass2" onkeyup="verify(); return false;"><br>
+            Type Password Again: <input type="password" id="pass2" name="pass2" onkeyup="verify(); return false;">
               <span id="confirmMessage" class="confirmMessage"></span>
               </div>
             <input type="submit" value="Sign up!">
