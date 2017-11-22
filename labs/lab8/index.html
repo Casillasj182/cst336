@@ -57,18 +57,19 @@
     function checkzip()
     {
         $.ajax({
-
             type: "GET",
             url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
             dataType: "json",
             data: { "zip": $("#zip").val() },
-            success: function(data,status) {
-            
+            success: function(data,status) 
+            {
             if(!data)
                {
-                $('#checkzip').css({ 'color': 'red', 'font-size': '100%' });
-                $('#checkzip').html("Zip code not found!")
-                   
+                    $('#checkzip').css({ 'color': 'red', 'font-size': '100%' });
+                    $('#checkzip').html("Zip code not found!")
+               }
+               else{
+                    $('#checkzip').html(" ")
                }
            
             },
@@ -91,8 +92,8 @@
    
     //Compare the values in the password field 
     //and the confirmation field
-    if(password1.value == password2.value){
-      
+    if(password1.value == password2.value)
+    {
         password2.style.backgroundColor ="#66cc66";
         message.style.color = "yellow";
         message.innerHTML = "Passwords Match!"
@@ -106,18 +107,19 @@
     }
 }  
     
-    function checkUsername() {
+    function checkUsername() 
+    {
         // alert("Hello");
-         var message = document.getElementById('confirmMessages');
+        var message = document.getElementById('confirmMessages');
         $.ajax({
-             
+            
             type: "GET",
             url: "checkUsername.php",
             dataType: "json",
             data: { "username": $("#username").val() },
             success: function(data,status) {
                 //alert(data);
-                
+
                 if(!data) 
                 { //data is false
                    // message.style.color="green";
@@ -150,7 +152,7 @@
          $("#zip").change( function() { getCity(); } ); 
          $("#state").change( function() { getCounties(); } );
          $("#username").change( function() { checkUsername(); } ); 
-          $("#zip").change( function() { checkzip(); } ); 
+         $("#zip").change( function() { checkzip(); } ); 
     } ); //documentReady
     
     
