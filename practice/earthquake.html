@@ -1,0 +1,57 @@
+<head>
+    
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+</head>
+
+<body id="dummybodyid">
+    <header>
+      <h1>Earthquake Info</h1>
+    </header>
+
+      <form method="post">
+				Start Time:   <input type="text" id="starttime" value="2017-10-01"> <br><br>
+				End Time:     <input type="text" id="endtime" value="2017-11-30"> <br><br>
+				Latitude:     <input type="text" id="latitude" value="36.6"> <br><br>
+				Longitude:    <input type="text" id="longitude" value="-121.9"> <br><br>
+				Max Radius:   <input type="text" id="maxradius" value="10"> <br><br>
+				Magnitud (0 to 7): <input type="range" id="minmag" min="0" value="3" max="7"> <br><br>
+			</form>
+        Change any value to update results.<br><br>
+     
+      <div id="earthquakeResult"></div>
+
+  <script> 
+		
+var url = "https://api.nasa.gov/planetary/apod?api_key=NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo";
+
+
+$.ajax({
+  url: url,
+  success: function(result){
+  if("copyright" in result) {
+    $("#copyright").text("Image Credits: " + result.copyright);
+  }
+   
+  else {
+    $("#copyright").text("Image Credits: " + "Public Domain");
+  }
+  
+  if(result.media_type == "video") {
+    $("#apod_img_id").css("display", "none"); 
+    $("#apod_vid_id").attr("src", result.url);
+  }
+  else {
+    $("#apod_vid_id").css("display", "none"); 
+    $("#apod_img_id").attr("src", result.url);
+  }
+  $("#reqObject").text(url);
+  $("#returnObject").text(JSON.stringify(result, null, 4));  
+  $("#apod_explaination").text(result.explanation);
+  $("#apod_title").text(result.title);
+}
+});
+
+
+ 	</script>
+ </body>	
