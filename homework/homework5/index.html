@@ -12,20 +12,28 @@
       <h1>Get Weather</h1>
     </header>
 
-    
-    Zip:<input type="text" id="zip">
+    <strong>
+    Enter Zip:<input type="text" id="zip" name="zipcode" >
 	<input type="Button" value="Go" onclick="getWeather()">
-	
+	</strong>
 	<br></br>
     <div id="result"></div>
     <div id="result2"></div>
      <div id="result3"></div>
+     <div id="result4"></div>
+      <div id="result5"></div>
+       <div id="result6"></div>
+        <div id="result7"></div>
+        <div id="result8"></div>
   <script> 
+  
 	var zip=$("#zip").val();
-
+    var creationDate=$("#creationDate").val();
+    
    function getWeather() {
         var zip=$("#zip").val();
-        
+         var creationDate=$("#creationDate").val();
+         
         $.ajax({
 
             type: "GET",
@@ -38,20 +46,83 @@
             
                console.log(data);
                
-               $("#result").html("City:" +" " + data.name);
+               $("#result").html("<strong>"+"City:" +"</strong>"+" " + data.name);
                console.log(" "); 
-                $("#result2").html("Current Temperature in Kelvin:" +  " " + data.main.temp);
-                $("#result3").html("Wind Speed:" + " " + data.wind.speed + " " + "mph");
+                $("#result2").html("<strong>"+"Current Temperature in Kelvin:" +"</strong>"+  " " + data.main.temp);
+                $("#result3").html("<strong>"+"Wind Speed:" + "</strong>" + " " + data.wind.speed + " " + "mph");
+                console.log("\n");
                 
             },
             
-            complete: function(data,status) { //optional, used for debugging purposes
-           //console.log(data.name);
+            complete: function(data,status) { 
             }
         
         });//ajax
         
-    } //function    
+        
+        
+        
+        
+        //To insert and update the database with the zipcode
+         $.ajax({
+
+            type: "GET",
+            url: "insert.php",
+            dataType: "json",
+            data: { "zip" :$("#zip").val(),
+                    
+                   },
+            success: function(data,status) {    
+            
+               console.log(data);
+            },
+            
+            complete: function(data,status) {
+            }
+        
+        });
+    
+    
+    
+    
+        
+    //To
+    
+        
+        
+        
+    //To get all the creation dates and display them on the webpage
+         $.ajax({
+
+            type: "GET",
+            url: "getTime.php",
+            dataType: "json",
+            data: { "zip": $("#zip").val(),
+                    
+                   },
+            success: function(data,status) {    
+        
+               $("#result6").html("<strong>"+"The zip code" +" " + zip + " " + "was searched " + "</strong>"+" " + data.length +" " + "time(s)");
+               
+                $("#result7").html("<strong>"+"Search History: "+"</strong>");
+              for (var i = 0; i < data.length; i++) 
+                { 
+                   
+                     $("#result7").append(" <br>" + data[i].creationDate + "<br>");
+                     console.log(" ");
+                }
+               // $("#result7").html(data[0].creationDate);
+               
+         
+            },
+            
+            complete: function(data,status) {
+            }
+        
+        });
+    } 
+
+    
 
  	</script>
  </body>	

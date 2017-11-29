@@ -1,21 +1,19 @@
 <?php
-
-
 include '../../dbConnection.php';
 $conn = getDatabaseConnection();
 
+$zipcode=$_GET['zip'];
 
-$sql = "SELECT *
-        FROM zip
-        WHERE creationDate = :creationDate"; 
 
-$namedParameters = array();
-$namedParameters[':creationDate'] = $_GET['creationDate'];
-       
-        
+//This works good it seems
+
+$sql = "INSERT INTO `zip` (`zip_code`) 
+VALUES (" . $zipcode .")";  
+
+
 $stmt = $conn->prepare($sql);
-$stmt->execute($namedParameters);
-$record = $stmt->fetch(PDO::FETCH_ASSOC);//expecting only one record
+$stmt->execute();
+//$record = $stmt->fetch(PDO::FETCH_ASSOC);//expecting only one record
 
 
 echo json_encode($record);

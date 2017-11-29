@@ -1,6 +1,6 @@
 body
 {
-    background-color:#8d9db6; 
+    background-color:#c15b4d; 
     text-align:center;
 }
 
@@ -46,5 +46,9 @@ form
 fieldset 
 {
     border: 0;
+}
+zip
+{
+    border-bottom-style: solid;
 }
 
