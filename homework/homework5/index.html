@@ -5,12 +5,10 @@
 </style>
     
 </head>
-
-<body >
-    <header>
-        <title>Get Weather</title>
+ <title>Get Weather</title>
       <h1>Get Weather</h1>
-    </header>
+<body >
+   
 
     <strong>
     Enter Zip:<input type="text" id="zip" name="zipcode" >
@@ -35,7 +33,6 @@
          var creationDate=$("#creationDate").val();
          
         $.ajax({
-
             type: "GET",
             url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=522771b33652137e1675df1b6b82acb8",
             dataType: "json",
@@ -48,7 +45,7 @@
                
                $("#result").html("<strong>"+"City:" +"</strong>"+" " + data.name);
                console.log(" "); 
-                $("#result2").html("<strong>"+"Current Temperature in Kelvin:" +"</strong>"+  " " + data.main.temp);
+                $("#result2").html("<strong>"+"Current Temperature in Fahrenheit:" +"</strong>"+  " " + (9/5 * ( data.main.temp- 273) + 32));
                 $("#result3").html("<strong>"+"Wind Speed:" + "</strong>" + " " + data.wind.speed + " " + "mph");
                 console.log("\n");
                 
@@ -65,7 +62,6 @@
         
         //To insert and update the database with the zipcode
          $.ajax({
-
             type: "GET",
             url: "insert.php",
             dataType: "json",
@@ -93,7 +89,6 @@
         
     //To get all the creation dates and display them on the webpage
          $.ajax({
-
             type: "GET",
             url: "getTime.php",
             dataType: "json",
@@ -121,8 +116,29 @@
         
         });
     } 
-
     
-
  	</script>
+ 	<br></br>
+ 		<br></br>
+ 			<br></br>
+ 				<br></br>
+ 					<br></br>
+ 						<br></br>
+ 							<br></br>
+ 						<br></br>
+ 						
+ 	<h1> </h1>
+ 	<div>
+ 	    
+ 	        Created by Joel Casillas
+ 	      <hr>
+            CSUMB 2017&copy; Casillas <br/>
+            <strong>
+                Disclaimer.
+            </strong>
+            <small>
+            This is for academic puposes only. <br/>
+            </small>
+ 	</div>
+ 	<h1> </h1>
  </body>	

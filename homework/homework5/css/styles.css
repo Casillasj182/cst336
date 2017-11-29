@@ -1,14 +1,10 @@
 body
 {
-    background-color:#c15b4d; 
+    background-color:#4e71b2; 
     text-align:center;
+    
 }
 
-h2
-{
-    border:solid;
-    color:white;
-}
 
 title
 {
@@ -25,30 +21,29 @@ h1
     border-right: thick solid #ffffff;
     border-bottom-width: thick;
     border-top-width: thick;
+    text-shadow: 0px 2px 3px blue;
+    text-size:20px;
+    font-weight: bold;
+    font-size: 200%
   
 
 }
-
-legend
+script
 {
- font-size: 25px; 
- text-decoration: underline;
- 
-}
-
-form
-{
-    border:solid;
-    background-color: #96ceb4;
-    
-}
-
-fieldset 
-{
-    border: 0;
+      font-size: 200%
 }
 zip
 {
     border-bottom-style: solid;
+}
+
+div
+{
+    
+    border-color: black;
+     font-size: 100%;
+     background-color:#8ca3ce;
+     box-sizing: border-box;
+
 }
 
