@@ -1,6 +1,6 @@
 <?php
 
-include '../../dbConnection.1.php';
+include '/dbConnection.1.php';
 
 $conn = getDatabaseConnection();
 
@@ -25,7 +25,7 @@ function getDeviceTypes() {
 function displayDevices(){
     global $conn;
     
-    $sql = "SELECT * FROM tc_device WHERE 1 ";
+    $sql = "SELECT * FROM games WHERE 1 ";
     
     
     if (isset($_GET['submit'])){
@@ -33,13 +33,13 @@ function displayDevices(){
         $namedParameters = array();
         
         
-        if (!empty($_GET['deviceName'])) {
+        if (!empty($_GET['gameName'])) {
             
             //The following query allows SQL injection due to the single quotes
             //$sql .= " AND deviceName LIKE '%" . $_GET['deviceName'] . "%'";
   
-            $sql .= " AND deviceName LIKE :deviceName"; //using named parameters
-            $namedParameters[':deviceName'] = "%" . $_GET['deviceName'] . "%";
+            $sql .= " AND gameName LIKE :gameName"; //using named parameters
+            $namedParameters[':gameName'] = "%" . $_GET['gameName'] . "%";
 
          }
          

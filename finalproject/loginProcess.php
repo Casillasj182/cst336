@@ -8,15 +8,15 @@ $error = "Error! Username/Password is Incorrect";
 
 if($username == $_GET['userName']){
     $_SESSION["userName"] = $username;
-    header("Location:admin.php"); //send user to homepage, for example.
+    //header("Location:mainadmin.php"); //send user to homepage, for example.
 }else{
     $_SESSION["error"] = $error;
-    header("Location: index.php"); //send user back to the login page.
+    //header("Location: index.php"); //send user back to the login page.
 }
 
 
 
-include '../../dbConnection.php';
+include '../dbConnection.php';
 $conn = getDatabaseConnection();
 
 //print_r($conn);
@@ -33,7 +33,7 @@ $password = sha1($_POST['password']);
 //         AND   password = '$password'";
 
 $sql = "SELECT *
-        FROM tc_admin
+        FROM admin
         WHERE userName = :userName 
         AND   password = :password";
 

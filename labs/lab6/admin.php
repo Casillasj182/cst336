@@ -5,9 +5,7 @@ if (!isset($_SESSION['userName'])) { //checks whether admin has logged in
     
     header("Location: index.php");
     exit();
-    
 }
-
 
 include '../../dbConnection.php';
 $conn = getDatabaseConnection();
@@ -41,7 +39,6 @@ function displayUsers() {
             
             function confirmDelete(firstName) 
             {
-                
                 return confirm("Are you sure you want to delete " + firstName + "?");
             }
         </script>

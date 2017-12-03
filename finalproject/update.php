@@ -7,14 +7,14 @@ if (!isset($_SESSION['userName'])) { //validates that admin has indeed logged in
     
 }
 
- include("../../dbConnection.php");
+ include("../dbConnection.php");
  $conn = getDatabaseConnection();
 
 function getDepartmentInfo(){
     global $conn;        
-    $sql = "SELECT deptName, departmentId 
-            FROM tc_department 
-            ORDER BY deptName";
+    $sql = "SELECT gameName, gameId 
+            FROM games 
+            ORDER BY gameName";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $records = $stmt->fetchAll();
@@ -35,43 +35,46 @@ function getDepartmentInfo(){
     }
 
 
-if (isset($_GET['userId'])) {
+if (isset($_GET['gameId'])) {
     
-    $userInfo = getUserInfo($_GET['userId']);
+    $userInfo = getUserInfo($_GET['gameId']);
     
     
 }
 
 if (isset($_GET['updateUserForm'])) { //admin has submitted form to update user, needs to update rest of the stuff
     
-    $sql = "UPDATE tc_user
-            SET firstName = :fName,
-                lastName = :lName,
-                userId = :userId,
-                email = :email,
-                phone = :phone,
-                universityId = :universityId
-			WHERE userId = :userId";
-	$namedParameters = array();
-	$namedParameters[":fName"] = $_GET['firstName'];
-	$namedParameters[":lName"] = $_GET['lastName'];
-	$namedParameters[":userId"] = $_GET['userId'];
-	$namedParameters[":email"] = $_GET['email'];
-	$namedParameters[":phone"] = $_GET['phone'];
-    $namedParameters[":universityId"] = $_GET['universityId'];
+    $sql = "UPDATE games
+            SET gameName = :gName,
+                gameId = :gId',
+                release_year = :release,
+               rating = :rating,
+                genre = :genre,
+                developerName = :developer
+			WHERE gameId = :gameId";
+ 
+    $namedParameters = array();
+    $namedParameters[':gName'] =  $gameName;
+    $namedParameters[':gId'] =  $gameId;
+    $namedParameters[':release'] =  $releaseyear;
+    $namedParameters[':rating'] =  $rating;
+    $namedParameters[':genre'] = $genre;
+    $namedParameters[':developer']  = $developerName;
+    
+    
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParameters);
     
 }
-function getUserInfo($userId) {
+function getGameInfo($userId) {
     global $conn;    
     $sql = "SELECT * 
-            FROM tc_user
-            WHERE userId = $userId";
+            FROM games
+            WHERE gameId = $userId";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $record = $stmt->fetch();
-    print_r($record);
+    //print_r($record);
     return $record;
 }
 
@@ -85,19 +88,19 @@ function getUserInfo($userId) {
         
         <center>
         
-        <title> Admin: Updating User </title>
+        <title> Admin: Updating Game  </title>
     </head>
     <body>
         <div>
 
     <h1> Admin Section </h1>
-    <h2> Updating User Info </h2>
+    <h2> Updating Game Info </h2>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
           <link href="css/main.css" rel="stylesheet" type="text/css" />
            <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
     <fieldset>
         
-        <legend> Update User </legend>
+        <legend> Update Game </legend>
         
         <form>
             <input type="hidden" name="userId" value="<?=$userInfo['userId']?>" />
