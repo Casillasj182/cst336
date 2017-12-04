@@ -53,7 +53,7 @@
     <body>
 
  
-        //to increase and decrease the pictures
+      
         <script>
             $(document).ready(function() {
                 
