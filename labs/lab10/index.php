@@ -20,7 +20,7 @@
          move_uploaded_file($_FILES["myFile"]["tmp_name"], "gallery/" . $_FILES['myFile']['name'] );
           for ($i = 0; $i < count($files) - 2; $i++) {
         //echo"<div id='big-image'>";
-     echo "<img id='imgtab' class='small' src='gallery/" .   $files[$i] . "' width='90'  >";
+     echo "<img  src='gallery/" .   $files[$i] . "' width='90' images =".$files[$i]."  >";
    // echo "<div";
       
   }
@@ -34,6 +34,9 @@
         
 
 </div>
+<div id="changesize">
+
+    </div>  
 <br></br>
 <!DOCTYPE html>
 <html>
@@ -43,31 +46,26 @@
 
 
     </head>
-     <script>
-        
-         
-       
- $(document).ready(function () {
-        var small={width: "200px",height: "116px"};
-        var large={width: "400px",height: "232px"};
-        var count=1; 
-       // for ($i = 0; $i < count($files) - 2; $i++) {
-        $("#imgtab").css(small).on('click',function () { 
-            $(this).animate((count==1)?large:small);
-            count = 1-count;
-        });
-        
-    });
-
-
-        </script>
-       
+    
    
 
        <link  href="css/styles.css" rel="stylesheet" type="text/css" />
     <body>
 
  
+        //to increase and decrease the pictures
+        <script>
+            $(document).ready(function() {
+                
+                $("img").click(function() {
+                  $("#changesize").empty()
+                  $("#changesize").prepend("<img src='gallery/" + $(this).attr("images") +  "' width = 300/>")
+                });
+            
+          } ); 
+        
+        </script>
+        
     <form method="POST" enctype="multipart/form-data"> 
  
         
@@ -97,4 +95,5 @@
       
 
     </body>
+     
 </html>

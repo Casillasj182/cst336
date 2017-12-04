@@ -22,13 +22,3 @@ hr
 {
     text-align: center;
 }
-img {
-    height: 100px;
-    width: 86px;
-    -webkit-transition: all .4s ease-in;
-}
-
-.fullSize {
-    height: 250px;
-    width: 232px;
-}
