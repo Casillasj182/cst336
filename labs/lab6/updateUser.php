@@ -138,6 +138,5 @@ function getUserInfo($userId) {
     </fieldset>
 
 </center>
-</div>
     </body>
 </html>

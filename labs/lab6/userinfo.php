@@ -64,7 +64,7 @@ function displayUsers() {
           
         <form action="logout.php">
             
-            <input type="submit" value="Logout" />
+            <input type="submit"  id="color" value="Logout" />
             
         </form>
         

@@ -95,46 +95,53 @@ function displayGames(){
 <html>
     <head>
          <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
         <title>GameStore </title>
     </head>
-    <body>
+    <body background="mario1.jpg">
+        
+        
+        
+        
         
         <center>
-        <h1> GameStore User Section</h1>
-      <div class="button-container">
+             <div id="wrapper">
+  <h1 class="chrome"> Game Library</h1>
+        
+    <h1>User Section</h1>
         <form class="even">
-            <div>
+           
             Games: <input type="text" name="gameName" placeholder="Game Name"/>
             Genre: <select name="genre">
                 <option value="">Select One</option>
               <?=getGenres()?>
             </select>
             <br>
-            <input type="submit" value="Search!" name="submit" >
-            </div>
+            <input type="submit" id="color" value="Search!" name="submit" >
+           
         </form>
         <h1> Admin Login Section </h1>
         
         <form method="POST" class="even2" action="loginProcess.php" action="admin.php">
-            <div>
+           
             Username: <input type="text" name="userName"/> <br />
             
             Password: <input type="password" name="password"/> <br />
             
-            <input type="submit" name="login" value="Login"/>
+            <input type="submit"  id="color" name="login" value="Login"/>
             </div>
         </form>
-        </div>
-        
-        <hr>
-        
-     
         </center>
           <center>
+              <div>
+                  <fieldset style="width: 500px; height: 620px;  opacity: 0.9;">
         <?php
       
         displayGames();
         ?>
+        </div>
+        </fieldset>
         </center>
         
         

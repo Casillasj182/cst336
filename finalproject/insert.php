@@ -31,13 +31,14 @@ if (isset($_GET['addUserForm'])){
     $rating   = $_GET['rating'];
     $genre   = $_GET['genre'];
     $developerName   = $_GET['developerName'];
+    $gamePrice = $_GET['gamePrice'];
     
-    //"INSERT INTO `tc_user` (`userId`, `firstName`, `lastName`, `email`, `universityId`, `gender`, `phone`, `role`, `deptId`) VALUES (NULL, 'a', 'a', 'a', '1', 'm', '1', '1', '1');
+
     
     $sql = "INSERT INTO games
-            (gameName, gameId, release_year, rating, genre, developerName)
+            (gameName, gameId, release_year, rating, genre, developerName, gamePrice)
             VALUES
-            (:gName, :gId, :release, :rating, :genre, :developer)";
+            (:gName, :gId, :release, :rating, :genre, :developer, :gamePrice)";
     $namedParameters = array();
     $namedParameters[':gName'] =  $gameName;
     $namedParameters[':gId'] =  $gameId;
@@ -45,6 +46,7 @@ if (isset($_GET['addUserForm'])){
     $namedParameters[':rating'] =  $rating;
     $namedParameters[':genre'] = $genre;
     $namedParameters[':developer']  = $developerName;
+    $namedParameters[':gamePrice']  = $gamePrice;
    
     
     $stmt = $conn->prepare($sql);
@@ -61,34 +63,37 @@ if (isset($_GET['addUserForm'])){
         
         <title> Admin: Adding New Games </title>
     </head>
-    <body>
+    <body background="mario1.jpg">
         <div>
          <link href="css/styles.css" rel="stylesheet" type="text/css" />
          <link href="css/main.css" rel="stylesheet" type="text/css" />
          <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <h1> Admin Section </h1>
+    <div id="wrapper">
+  <h1 class="chrome" size="40px">Add Game To Library</h1>
    
-
-    <fieldset>
-        
-        <legend> Add New Game</legend>
+   <br></br>
+      <br></br>
+    <fieldset style="width: 450px; height: 220px; opacity: 0.9;">
+     
+      
         
         <form>
             
-            Game Name: <input type="text" name="gameName"  placeholder="Enter Game Name"/> <br>
+            Game Name: <input type="text" name="gameName"  placeholder="Enter Email Address"/> <br>
             Release Year: <input type="text" name="release_year"  placeholder="Enter Release Year"/> <br>
             Rating: <input type="text" name="rating"  placeholder="Enter Rating"/> <br>
             Genre: <input type="text" name="genre"  placeholder="Enter Genre"/> <br>
            Developer: <input type="text" name="developerName"  placeholder="Enter Developer "/> <br>
+            Game Price: <input type="text" name="gamePrice"  placeholder="Enter Game Price "/> <br>
                    
             <br />
                         </select>
                         <br />
-                <input type="submit" name="addUserForm" value="Add Game!"/>
+                <input type="submit" id="color" name="addUserForm" value="Add Game!"/>
         </form>
         <form method="POST" class="even2" action="index.php">
             <div>
-            <input type="submit" name="login" value="Return To The Home Page"/>
+            <input type="submit" id="color" name="login" value="Return To The Home Page"/>
             </div>
         </form>
         

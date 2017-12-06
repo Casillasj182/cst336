@@ -26,9 +26,20 @@
   }
      }
       echo"<br>";
-      
-      
 ?>
+    <script>
+            $(document).ready(function() {
+                
+                $("img").click(function() {
+                    //.empty() so that the previous pictures get removed and dont stack up
+                  $("#changesize").empty()
+                  //inserts certain inofr in front of other specefic spots soitll change the size of the picture
+                  $("#changesize").prepend("<img src='gallery/" + $(this).attr("images") +  "' width = 300/>")
+                });
+            
+          } ); 
+        
+    </script>
 
   
         
@@ -54,17 +65,7 @@
 
  
       
-        <script>
-            $(document).ready(function() {
-                
-                $("img").click(function() {
-                  $("#changesize").empty()
-                  $("#changesize").prepend("<img src='gallery/" + $(this).attr("images") +  "' width = 300/>")
-                });
-            
-          } ); 
-        
-        </script>
+       
         
     <form method="POST" enctype="multipart/form-data"> 
  
