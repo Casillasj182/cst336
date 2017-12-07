@@ -73,13 +73,13 @@ if (isset($_GET['addUserForm'])){
    
    <br></br>
       <br></br>
-    <fieldset style="width: 450px; height: 220px; opacity: 0.9;">
+    <fieldset id="color2" style="width: 450px; height: 220px; opacity: 0.9;">
      
       
         
         <form>
             
-            Game Name: <input type="text" name="gameName"  placeholder="Enter Email Address"/> <br>
+            Game Name: <input type="text" name="gameName"  placeholder="Enter Game Name"/> <br>
             Release Year: <input type="text" name="release_year"  placeholder="Enter Release Year"/> <br>
             Rating: <input type="text" name="rating"  placeholder="Enter Rating"/> <br>
             Genre: <input type="text" name="genre"  placeholder="Enter Genre"/> <br>

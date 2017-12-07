@@ -52,6 +52,7 @@ function displayUsers() {
         </form>
       
         <br /><br />
+         <fieldset id="color2" style="width: 390px; height: 200px;   opacity: 0.9;">
          <fieldset style="width: 400px; height: 190px;  opacity: 0.9;">
        <?php
         
@@ -65,6 +66,7 @@ function displayUsers() {
        
         ?>
         </div>
+        </fieldset>
         </fieldset>
         </center>
         </div>

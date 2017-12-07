@@ -22,6 +22,10 @@ fieldset{
   text-align: center;
   background-color:#99ddff;
 } 
+#color2
+{
+  background-color:orange;
+}
 
 
 
@@ -41,5 +45,12 @@ body {; position: relative;}
   line-height: 1;
 }
 
-
-
+#form
+{
+    float:left;
+}
+#even 
+{
+  
+  float:left;
+}

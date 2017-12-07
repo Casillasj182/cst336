@@ -42,27 +42,30 @@ function displayGames() {
   <h1 class="chrome">Admin Page</h1>
     <body background="mario2.jpg">
       
-
-        
-        
-        <form method="POST"  action="insert.php" >
+ <br></br>
+  <br></br>
+ 
+          <fieldset id="color2"  style="width: 650px; height: 120px;  opacity: 0.9;">
+               <h1>Menu </h1>
+        <form  id="form" method="POST"  action="insert.php" >
             <input type="submit"  id="color" value="Insert A New Game" />
         </form>
       
-        <form action="index.php">
+        <form id="form" action="index.php">
             <input type="submit"  id="color" value="Admin Logout" />
         </form>
         <div>
-          <form action="report1.php">
+          <form id="form" action="report1.php">
             <input type="submit"  id="color" value="Average Team Size " />
         </form>
-        <form action="report2.php">
+        <form id="form" action="report2.php">
             <input type="submit" id="color" value="Average Game Cost " />
         </form>
-         <form action="report3.php">
-            <input type="submit" id="color" value="See Report3" />
+         <form id="form" action="report3.php">
+            <input type="submit" id="color" value="Most Experienced Director" />
         </form>
         </div>
+        </fieldset>
          <hr>
           <fieldset style="width: 500px; height: 620px;  opacity: 0.9;">
               

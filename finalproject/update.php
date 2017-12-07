@@ -5,28 +5,47 @@ if (!isset($_SESSION['userName']))
 { 
     header("Location: index.php");
 }
+
 include("../dbConnection.php");
 $conn = getDatabaseConnection();
-$gameInfo = getGameInfo($_GET['gameId']);
+
+
+if (isset($_GET['gameId'])) {
+    
+   $gameInfo = getGameInfo($_GET['gameId']);
+    
+    
+}
+
     
 if (isset($_GET['updateUserForm'])) 
 {
+    /*
+    
+    UPDATE `games` SET `gameName`=[value-1],`gameId`=[value-2],`release_year`=[value-3],
+    `rating`=[value-4],`genre`=[value-5],`developerName`=[value-6],`gamePrice`=[value-7] WHERE 1
+    */
     
     $sql = "UPDATE games
             SET gameName = :gName,
+            gameId = :gameId,
                 release_year = :release_year,
-                gameId = :gameId,
                 rating = :rating,
+                genre= :genre,
                 developerName = :developerName,
                 gamePrice=:gamePrice
 			WHERE gameId =:gameId";
+			
+			
 	$namedParameters = array();
 	$namedParameters[":gName"] = $_GET['gameName'];
 	$namedParameters[":release_year"] = $_GET['release_year'];
 	$namedParameters[":gameId"] = $_GET['gameId'];
 	$namedParameters[":rating"] = $_GET['rating'];
+	$namedParameters[":genre"] = $_GET['genre'];
 	$namedParameters[":developerName"] = $_GET['developerName'];
 	$namedParameters[":gamePrice"] = $_GET['gamePrice'];
+	
     $stmt = $conn->prepare($sql);
     $stmt->execute($namedParameters);
 }
@@ -66,17 +85,18 @@ function getGameInfo($gameId)
    
     <form>
     <input type="hidden" name="gameId" value="<?=$gameInfo['gameId']?>" />
-        Game Name: <input type="text" name="firstName" required value="<?=$gameInfo['gameName']?>" /> <br>
-        rating: <input type="text" name="email" required value="<?=$gameInfo['rating']?>"/> <br>
-        release year: <input type="text" name="universityId" required value="<?=$gameInfo['release_year']?>"/> <br>
-        Developer: <input type="text" name="phone" required value="<?=$gameInfo['developerName']?>"/> <br>
+        Game Name: <input type="text" name="gameName" required value="<?=$gameInfo['gameName']?>" /> <br>
+        Rating: <input type="text" name="rating" required value="<?=$gameInfo['rating']?>"/> <br>
+        Release year: <input type="text" name="release_year" required value="<?=$gameInfo['release_year']?>"/> <br>
+        Developer: <input type="text" name="developerName" required value="<?=$gameInfo['developerName']?>"/> <br>
+        Genre: <input type="text" name="genre" required value="<?=$gameInfo['genre']?>"/> <br>
         <br />
         <br />
     <input type="submit" id="color" name="updateUserForm" value="Update User!"/>
     </form>
-     <form action="index.php">
-            <input type="submit" id="color" value="Admin Logout" />
-        </form>
+     <form action="admin.php">
+            <input type="submit" id="color" value="Logout" />
+        </for3m>
 </fieldset>
 </center>
 </body>

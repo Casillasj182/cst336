@@ -101,17 +101,16 @@ function displayGames(){
     </head>
     <body background="mario1.jpg">
         
-        
-        
-        
+       
         
         <center>
              <div id="wrapper">
   <h1 class="chrome"> Game Library</h1>
-        
-    <h1>User Section</h1>
-        <form class="even">
-           
+    <fieldset id="color2" style="width: 1000px; height: 180px;  opacity: 0.9;">
+   
+     
+        <form id="even">
+            <h1>User Section</h1>
             Games: <input type="text" name="gameName" placeholder="Game Name"/>
             Genre: <select name="genre">
                 <option value="">Select One</option>
@@ -121,20 +120,25 @@ function displayGames(){
             <input type="submit" id="color" value="Search!" name="submit" >
            
         </form>
-        <h1> Admin Login Section </h1>
-        
-        <form method="POST" class="even2" action="loginProcess.php" action="admin.php">
-           
+       
+     
+        <form id="even2" method="POST" class="even2" action="loginProcess.php" action="admin.php">
+            <h1> Admin Login Section </h1>
             Username: <input type="text" name="userName"/> <br />
             
             Password: <input type="password" name="password"/> <br />
             
-            <input type="submit"  id="color" name="login" value="Login"/>
-            </div>
+            <input type="submit"  id="button" id="color" name="login" value="Login">
+            
+              
         </form>
+      </fieldset>
         </center>
+        
+        </fieldset>
           <center>
               <div>
+                  <br></br>
                   <fieldset style="width: 500px; height: 620px;  opacity: 0.9;">
         <?php
       
@@ -143,11 +147,9 @@ function displayGames(){
         </div>
         </fieldset>
         </center>
-        
-        
-        
-
-
-
+      
     </body>
 </html>
+<?php
+    unset($_SESSION["error"]);
+?>
