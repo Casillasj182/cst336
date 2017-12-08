@@ -56,7 +56,6 @@ if (empty($record)) {
     
     //echo "right credentials!";
     $_SESSION['userName'] = $record['userName'];
-    $_SESSION['adminFullName'] = $record['firstName'] . " " . $record['lastName'];
     //echo $_SESSION['adminFullName'] . "<br>";
     //echo $record['firstName'] . " " . $record['lastName'];
    header("Location: admin.php"); //redirecting to admin portal

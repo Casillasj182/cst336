@@ -81,7 +81,7 @@ function getGameInfo($gameId)
  <br></br>        
   <br></br>         
 <center>
-<fieldset style="width: 400px; height: 190px;  opacity: 0.9;">
+<fieldset id="color2" style="width: 400px; height: 220px;  opacity: 0.9;">
    
     <form>
     <input type="hidden" name="gameId" value="<?=$gameInfo['gameId']?>" />
@@ -90,9 +90,11 @@ function getGameInfo($gameId)
         Release year: <input type="text" name="release_year" required value="<?=$gameInfo['release_year']?>"/> <br>
         Developer: <input type="text" name="developerName" required value="<?=$gameInfo['developerName']?>"/> <br>
         Genre: <input type="text" name="genre" required value="<?=$gameInfo['genre']?>"/> <br>
+        Price: <input type="text" name="gamePrice" required value="<?=$gameInfo['gamePrice']?>"/> <br>
+        
         <br />
         <br />
-    <input type="submit" id="color" name="updateUserForm" value="Update User!"/>
+    <input type="submit" id="color" name="updateUserForm" value="Update Game!"/>
     </form>
      <form action="admin.php">
             <input type="submit" id="color" value="Logout" />

@@ -99,6 +99,36 @@ function displayGames(){
 
         <title>GameStore </title>
     </head>
+  <script>
+       
+    var username = $('#userName').val();
+$('#userName').change(function() {
+   $.ajax({
+      url: "checkusername.php",
+      type: 'POST',
+      data: 'userName=' + userName,
+      success: function(result){
+                 if(result > 0){
+                    $('#checkusername').html("Username is available")
+                 }
+                 else{
+                      $('#checkusername').html("Username isnt available")
+                 }
+               }
+      });
+});
+    $(document).ready( function(){
+        
+         //$("#userName").change( function() { checkUsername(); } ); 
+        
+    } ); //documentReady
+
+
+  
+   
+    
+    
+    </script>
     <body background="mario1.jpg">
         
        
@@ -124,9 +154,9 @@ function displayGames(){
      
         <form id="even2" method="POST" class="even2" action="loginProcess.php" action="admin.php">
             <h1> Admin Login Section </h1>
-            Username: <input type="text" name="userName"/> <br />
-            
-            Password: <input type="password" name="password"/> <br />
+            Username: <input type="text" id="username" name="userName"/> <br />
+              <span id="checkusername"></span>
+            Password: <input type="password" id="password" name="password"/> <br />
             
             <input type="submit"  id="button" id="color" name="login" value="Login">
             
@@ -141,7 +171,9 @@ function displayGames(){
                   <br></br>
                   <fieldset style="width: 500px; height: 620px;  opacity: 0.9;">
         <?php
-      
+       
+
+
         displayGames();
         ?>
         </div>

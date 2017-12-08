@@ -60,7 +60,7 @@ function displayUsers() {
        
         
         <br /><br />
-         <fieldset style="width: 500px; height: 390px;  opacity: 0.9;">
+         <fieldset id="color2" style="width: 500px; height: 390px;  opacity: 0.9;">
        <?php
         
         $users=displayUsers();

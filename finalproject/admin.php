@@ -67,7 +67,7 @@ function displayGames() {
         </div>
         </fieldset>
          <hr>
-          <fieldset style="width: 500px; height: 620px;  opacity: 0.9;">
+          <fieldset style="width: 500px; height: 920px;  opacity: 0.9;">
               
               
               <table>
