@@ -1,36 +1,14 @@
-<?php
-session_start();
-
-if (!isset($_SESSION['userName'])) { //checks whether admin has logged in
-    
-    header("Location: index.php");
-    exit();
-    
-}
-
-
-include '../dbConnection.php';
-$conn = getDatabaseConnection();
-
-
-function displayUsers() {
-    global $conn;
-    $sql = "SELECT AVG(teamSize) from developers";
-    $statement = $conn->prepare($sql);
-    $statement->execute();
-    $users = $statement->fetchALL(PDO::FETCH_ASSOC);
-    //print_r($users);
-    return $users;
-}
 
 
 
-?>
 <!DOCTYPE html>
 <html>
     <head>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
+      <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
       
+     
+
          
         <center>
         <div>
@@ -53,9 +31,38 @@ function displayUsers() {
       
         <br /><br />
          <fieldset id="color2" style="width: 390px; height: 200px;   opacity: 0.9;">
+             <div id="result"></div>
+        <script>
+	var Count=$("#teamSize").val();
+   function getCount() 
+    {
         
+       
+        $.ajax({
+            type: "GET",
+            url: "getCount.php",
+            dataType: "json",
+            data: {
+                    
+                   },
+            success: function(data,status) {    
+        
+               $("#result").html("<strong>"+"The Average Team Size is " +" " + data.count + " Programmers"  + "</strong>");
+                 
+               
+              
+               // $("#result7").html(data[0].creationDate);
+            },
+            
+            complete: function(data,status) {
+            }
+        
+        });
+    
+    }
+</script>
        <?php
-        
+        /*
         $users=displayUsers();
         
       foreach($users as $user) {
@@ -63,13 +70,21 @@ function displayUsers() {
             //echo " There is" . $user['COUNT(developerId']."'s";
             echo " The Average Team Size is: " . "<strong>". $user['AVG(teamSize)'] . " Programmers". "</strong>" ."<br> " ;
         }
+        */
        
         ?>
+        
         </div>
         </fieldset>
        
         </center>
         </div>
+         <form>
+            	<input type="Button" value="Show" onclick="getCount()">
+            	
+            	 <div id="result2"></div>
+        </form>
+        
         <center>
             <br></br>
         <form action="admin.php">

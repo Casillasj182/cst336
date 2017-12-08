@@ -119,7 +119,7 @@ $('#userName').change(function() {
 });
     $(document).ready( function(){
         
-         //$("#userName").change( function() { checkUsername(); } ); 
+         $("#userName").change( function() { checkUsername(); } ); 
         
     } ); //documentReady
 
